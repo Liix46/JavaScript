@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExtendedDate</title>
+</head>
+
+<body>
+    <script>
+        class ExtendedDate extends Date {
+
+            logDate() {
+                console.log(`Месяц: ${this.getMonth()+1} День: ${this.getDate()}`);
+            }
+            isFuruteDate() {
+                if (this > Date.now()) {
+                    return true;
+                }
+                else{
+                    return false;                    
+                }
+            }
+            isLoop(){
+                return this.getFullYear() % 4 == 0 && (this.getFullYear() % 100 != 0 || this.getFullYear() % 400 == 0);
+            }
+            nextDate(){
+                let nextDay = this.getDate()+1;
+                this.setDate(nextDay);
+                return this;
+            }
+        }
+
+        let date1 = new ExtendedDate(2010, 10, 5);
+        let date2 = new ExtendedDate(2040, 10, 5);
+        let date3 = new ExtendedDate(2021, 10, 5);
+        let date4 = new ExtendedDate(2020, 11, 31);
+        date1.logDate();
+        console.log(date1.isFuruteDate());
+        console.log(date2.isFuruteDate());
+        console.log(date3.isLoop());
+        console.log(date4.isLoop());
+
+        let date5 = new ExtendedDate(date4.nextDate());
+        date5.logDate();
+
+       
+
+    </script>
+</body>
+
+</html>

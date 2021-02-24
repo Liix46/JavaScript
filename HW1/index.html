@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function dataCollection() {
+
+            let dataUser
+            do {
+                let nameUser = prompt("Введите ФИО:", "Иванов ИИ");
+                let sexUser = prompt("Введите пол:", "м");
+                let ageUser = prompt("Введите возраст:", 0);
+                let emailUser = prompt("Введите почту:", "qwerty123@gmail.com");
+
+                dataUser = "ФИО: " + nameUser
+                    + "\n Пол: " + sexUser
+                    + "\n Возраст: " + ageUser
+                    + "\n e-mail: " + emailUser
+                    + "\n\n Все верно?";
+
+            } while (!confirm(dataUser));
+
+            alert("Спасибо за предоставленную информацию");
+
+        }
+
+        function isLuckyTicket() {
+
+            let numberTicket = parseInt(prompt("Введите номер билета:", 000000), 10);
+
+            let sumFirstPart = 0;
+            let sumLastPart = 0;
+            for (let i = 0; i < 3; i++) {
+                sumLastPart += numberTicket % 10;
+                numberTicket = parseInt((numberTicket / 10), 10);
+            }
+            for (let i = 0; i < 3; i++) {
+                sumFirstPart += numberTicket % 10;
+                numberTicket = parseInt((numberTicket / 10), 10);
+            }
+
+            if (sumFirstPart == sumLastPart) {
+                alert("Первая часть числа равна второй части");
+            }
+            else {
+                alert("Первая часть числа не равна второй части");
+            }
+
+        }
+    
+        function GuessNumber() {
+            alert("Загадайте число от 0 до 100");
+
+            let minDigit = 0;
+            let maxDigit = 100;
+            let tempDigit = 0;
+
+            // debugger;
+            while (true) {
+                if (confirm(`Ваше число меньше ${maxDigit}`)) {
+                    if (maxDigit - minDigit == 1) {
+                        alert(`Ваше число ${minDigit}`);
+                        break;
+                    }
+                    tempDigit = (maxDigit - minDigit) / 2 + 1;
+                    maxDigit -= parseInt(tempDigit, 10);
+                }
+                else {
+                    if (maxDigit - minDigit == 100) {
+                        alert(`Ваше число ${maxDigit}`);
+                        break;
+                    }
+                    tempDigit = (maxDigit - minDigit) / 2 + 1;
+                    minDigit = maxDigit;
+                    maxDigit += parseInt(tempDigit, 10);
+                }
+            }
+        }
+   
+        function Test() {
+
+            let startMessage = "Верно ли равенство?\n";
+            let marks = [0, 0, 0];
+            let countRightAnsvers = 0;
+
+            let questions = [
+                "2 + 2 = 4",
+                "2 * 2 = 4",
+                "2 ^ 2 = 4"];
+
+            for (let i = 0; i < questions.length; i++) {
+                if (confirm(`${startMessage}${questions[i]}`)) {
+                    marks[i] = 1;
+                    countRightAnsvers++;
+                }
+            }
+
+            let ansver = "";
+            for (let i = 0; i < marks.length; i++) {
+                if (marks[i] == 1) {
+                    ansver += `${i + 1} - true\n`;
+                }
+                else {
+                    ansver += `${i + 1} - false\n`;
+                }
+            }
+            alert(`${ansver}\n ${countRightAnsvers}/${marks.length}`);
+        }
+    
+        function CheckString() {
+            let fullName = prompt("Введите ваше ФИО: ", "Иванов ИИ");
+           
+            while(fullName.indexOf(' ') != -1){
+                fullName = fullName.replace(' ', '');
+            }
+
+            if(fullName.length == 0){     
+                alert("Данные некорректные");         
+                return;
+            }
+
+            let regexp = /[A-Z]/gi;
+            let regexp2 = /[А-Я]/gi;
+           // debugger;
+            fullName = fullName.replace(regexp, '');
+            fullName = fullName.replace(regexp2, '');
+            while(fullName.indexOf('.') != -1){
+                fullName = fullName.replace('.', '');
+            }
+
+            if(fullName.length == 0){
+                alert("Данные корректные");
+            }
+            else{
+                alert("Данные некорректные");
+            }
+
+        }
+    
+        function infoAdressString(){
+            let adress = prompt("Введите http(s)-адрес ", "http://www.ufa.com.ua/utilites/hdd/out.php?sort=2");
+
+            adress = adress.replace('/', '');
+            let arrayOfStrings = adress.split('/');
+            let protocol = arrayOfStrings[0];
+            let host = arrayOfStrings[1];
+            let way = arrayOfStrings[2];
+            let fileName = arrayOfStrings[3];
+            let queryString = arrayOfStrings[4];
+
+            alert(`протокол ${protocol} \nхост ${host}\nпуть ${way}\nимя файла ${fileName}\nстрока запроса ${queryString}`);
+        }
+    </script>
+    <script>
+        // dataCollection();
+        // isLuckyTicket();
+        // GuessNumber();
+        // Test();
+        // CheckString();
+        // infoAdressString();
+
+
+    </script>
+</body>
+
+</html>

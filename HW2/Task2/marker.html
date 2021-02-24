@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class marker {
+            _color = "white";
+            _amountOfInk = 100.0;
+
+            constructor(color, amountofInk) {
+                this._color = color;
+                this.AmountofInk = amountofInk;
+            }
+
+            set AmountofInk(value) {
+                if (value < 0) throw new Error("Отрицательное количество чернил");
+                this._amountOfInk = value;
+            }
+            get AmountofInk() {
+                return this._amountOfInk;
+            }
+            print(message) {
+                while (this.AmountofInk > 0.0) {
+                    if ((this.AmountofInk - message.length * 0.5) < 0) {
+                        // цикл не тот. заменить цикл либо условие
+                        for (let i = 0; i < this.AmountofInk; this.AmountofInk -= 0.5) {
+                            console.log(`%c${message[i]} `, `background: black; color: ${this._color}`);
+
+                        }
+                        return;
+                    }
+                    console.log(`%c${message}\n`, `background: black; color: ${this._color}`);
+                    this.AmountofInk -= message.length * 0.5;
+                }
+
+            }
+        }
+        let redMarker = new marker("red", 5.0);
+        redMarker.print("Mad world. Strange world");
+    </script>
+</body>
+
+</html>

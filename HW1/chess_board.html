@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_chess_board.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+    <p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </p>
+    <script>
+        let elementsDiv = document.getElementsByTagName("div");
+        let elementsP = document.getElementsByTagName("p");
+        for (let i = 0; i < elementsP.length; i++) {
+
+            elementsP[i].margin = "0px";
+            elementsP[i].padding = "0px";
+        }
+        let line = 1;
+        for (let i = 0; i < elementsDiv.length; i++) {
+            elementsDiv[i].style.width = "20px";
+            elementsDiv[i].style.height = "20px";
+            elementsDiv[i].style.border = "0.5px solid black";
+            elementsDiv[i].style.display = "inline-block";
+            elementsDiv[i].style.margin = "-2px";
+            if (i % 8 == 0) {
+                line++;
+            }
+            if (line % 2 == 0) {
+                if (i % 2 == 0) {
+                    elementsDiv[i].style.backgroundColor = "brown";
+                }
+                else {
+                    elementsDiv[i].style.backgroundColor = "yellow";
+                }
+            }
+            else {
+                if (i % 2 == 0) {
+                    elementsDiv[i].style.backgroundColor = "yellow";
+                }
+                else {
+                    elementsDiv[i].style.backgroundColor = "brown";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
