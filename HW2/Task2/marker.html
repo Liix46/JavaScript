@@ -27,16 +27,18 @@
                 return this._amountOfInk;
             }
             print(message) {
+                // надо убрать пробелы чтобы их не считало
                 while (this.AmountofInk > 0.0) {
                     if ((this.AmountofInk - message.length * 0.5) < 0) {
-                        // цикл не тот. заменить цикл либо условие
-                        for (let i = 0; i < this.AmountofInk; this.AmountofInk -= 0.5) {
-                            console.log(`%c${message[i]} `, `background: black; color: ${this._color}`);
-
+                        let index = 0;
+                        while (this.AmountofInk > 0.0) {
+                            console.log(`%c${message[index]} `, `background: black; color: ${this._color}`);
+                            this.AmountofInk -= 0.5;
+                            index++;
                         }
                         return;
                     }
-                    console.log(`%c${message}\n`, `background: black; color: ${this._color}`);
+                    console.log(`%c${message}`, `background: black; color: ${this._color}`);
                     this.AmountofInk -= message.length * 0.5;
                 }
 
