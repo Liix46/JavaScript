@@ -44,8 +44,21 @@
             }
         }
         let redMarker = new marker("red", 15.0);
-        redMarker.print("Mad world.");
+       // redMarker.print("Mad world.");
         //redMarker.print("Mad world. Strange world");
+
+        class markerPro extends marker{
+            fillUp(){
+                this.AmountofInk = 100;
+            }
+        }
+
+        let blueMarkerPro = new markerPro("blue", 20.0);
+        blueMarkerPro.print("Саня займи сотку");
+        blueMarkerPro.print("Саня отдай сотку");
+        blueMarkerPro.fillUp();
+       // debugger;
+        blueMarkerPro.print("Саня верни сотку");
     </script>
 </body>
 
