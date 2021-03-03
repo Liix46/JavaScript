@@ -36,17 +36,23 @@
     <script>
         function bolderText(e) {            
             e.target.style.fontWeight = "bolder";
+            e.stopPropagation(); 
         }
         function noBolderText(e) {            
             e.target.style.fontWeight = "normal";
+            e.stopPropagation(); 
         }
         function hidden(e){
-            if(e.target.style.visibility == "hidden"){
-                e.target.style.visibility = "none";
+           // debugger;
+            let childs = this.getElementsByTagName("ul");
+
+            if(childs[0].style.visibility == "collapse"){
+                childs[0].style.visibility = "visible"; 
             }
             else{
-                e.target.style.visibility = "hidden";
+                childs[0].style.visibility = "collapse";                          
             }
+            e.stopPropagation(); 
         }
 
         let liTags = document.getElementsByTagName("li");
