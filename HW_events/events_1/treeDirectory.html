@@ -43,14 +43,18 @@
             e.stopPropagation(); 
         }
         function hidden(e){
-           // debugger;
+            debugger;
             let childs = this.getElementsByTagName("ul");
 
-            if(childs[0].style.visibility == "collapse"){
-                childs[0].style.visibility = "visible"; 
+            if(childs[0].style.display == "none"){
+                // childs[0].style.hidden = "true"; 
+                // childs[0].style.visibility = "visible";
+                childs[0].style.display = "inline-block";
             }
             else{
-                childs[0].style.visibility = "collapse";                          
+                // childs[0].style.visibility = "collapse";        
+                // childs[0].style.hidden = "false";   
+                childs[0].style.display = "none";               
             }
             e.stopPropagation(); 
         }
