@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="treeDirectry.css" type="text/css"/>
+    <link rel="stylesheet" href="treeDirectry.css" type="text/css" />
 </head>
 
 <body>
@@ -34,41 +34,39 @@
     </ul>
 
     <script>
-        function bolderText(e) {            
+        //debugger;
+        function BolderText(e) {
             e.target.style.fontWeight = "bolder";
-            e.stopPropagation(); 
+            e.stopPropagation();
         }
-        function noBolderText(e) {            
+        function NoBolderText(e) {
             e.target.style.fontWeight = "normal";
-            e.stopPropagation(); 
+            e.stopPropagation();
         }
-        function hidden(e){
-            debugger;
-            let childs = this.getElementsByTagName("ul");
-
-            if(childs[0].style.display == "none"){
-                // childs[0].style.hidden = "true"; 
-                // childs[0].style.visibility = "visible";
-                childs[0].style.display = "inline-block";
+        function Hidden(e) {
+           // debugger;
+            let childsUl = this.children;
+            for (let i = 0; i < childsUl.length; i++) {
+                if (childsUl[i].style.display == "none") {
+                    childsUl[i].style.display = "inline-block";
+                }
+                else {
+                    childsUl[i].style.display = "none";
+                }
             }
-            else{
-                // childs[0].style.visibility = "collapse";        
-                // childs[0].style.hidden = "false";   
-                childs[0].style.display = "none";               
-            }
-            e.stopPropagation(); 
+            e.stopPropagation();
         }
 
         let liTags = document.getElementsByTagName("li");
-        for(let i =0; i < liTags.length; i++){
-            liTags[i].onmouseover = bolderText;
-            liTags[i].onmouseout = noBolderText;
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseover = BolderText;
+            liTags[i].onmouseout = NoBolderText;
         }
-        let ulTags = document.getElementsByTagName("ul");
-        for(let i =0; i < ulTags.length; i++){
-            ulTags[i].onclick = hidden;
+        let ulTags = document.body.getElementsByTagName("li");
+        for (let i = 0; i < ulTags.length; i++) {
+            ulTags[i].onclick = Hidden;
         }
-        
+
     </script>
 </body>
 
