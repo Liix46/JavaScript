@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <form>
+        <input type="radio" name="radioButton" id="addInEndRadio"></input>
+        <label for="textBox1">Добавить элемент в конец списка </label>
+        <input type="text" id="textBox1" disabled></input>
+        <br>
+        <input type="radio" name="radioButton"></input>
+        <label for="textBox2">Вставить элемент списка </label>
+        <input type="text" id="textBox2" disabled></input>   
+        <br> 
+        <input type="radio" id="changeTextRadio" name="radioButton" checked></input>
+        <label for="textBox3">Изменить текст элемента списка </label>
+        <input type="text" id="textBox3" ></input>    
+        <br>
+        <input type="radio" name="radioButton"></input>
+        <label for="textBox4">Добавить вложенный список </label>
+        <input type="text" id="textBox4" disabled></input>   
+        <br> 
+        <input type="radio" name="radioButton"></input>
+        <label>Удалить элемент в конец списка </label>                  
+    </form>
+    <button id="newListButton">Добавить новый список</button>
+   <script src="dinamic.js"></script>
+</body>
+
+</html>

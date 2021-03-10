@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="textBox" style="border: 1px solid black;"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Aperiam consectetur fuga eius. Suscipit ipsum nostrum modi aliquid quas, animi, repellendus quam officia a
+        magni explicabo nemo ab, quia iusto voluptas!</div>
+    <form>
+        <input type="button" id="sliderButton"  />
+    </form>
+    <script>
+        function OnMouseMove(event) {
+
+            if (event.which == 1) {
+               
+                let test = document.getElementById("textBox");
+                let minWidth = parseInt(window.getComputedStyle(test, null).minWidth);
+                let minHeight = parseInt(window.getComputedStyle(test, null).minHeight);
+
+                if ( minWidth < event.clientX && minHeight < event.clientY) {
+
+                    sliderButton.style.left = parseInt(event.clientX - 6) + 'px';
+                    sliderButton.style.top = parseInt(event.clientY - 6) + 'px';
+                    textBox.style.width = parseInt(sliderButton.style.left) + 6 + 'px';
+                    textBox.style.height = parseInt(sliderButton.style.top) + 6 + 'px';
+                }
+            }
+        }
+        sliderButton.addEventListener("mousemove", OnMouseMove);
+
+        let test = document.getElementById("textBox");
+        let height = window.getComputedStyle(test, null).height;
+        let width = window.getComputedStyle(test, null).width;
+
+        sliderButton.style.left = parseInt(width) - 6 + 'px';
+        sliderButton.style.top = parseInt(height) - 6 + 'px';
+    </script>
+</body>
+
+</html>

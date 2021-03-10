@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <ul id="mainTagUL">
+        <li>what is Lorem ipsum? <ul style="display: none;">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. At reiciendis nisi quis qui culpa fuga
+                    aspernatur quibusdam dolore repellendus! Enim animi exercitationem voluptate autem, neque modi?
+                    Vitae officiis nesciunt tempora?</li>
+            </ul>
+        </li>
+        <li>why do we use it? <ul style="display: none;">
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam odit optio quas, rerum
+                    numquam dolore? Necessitatibus animi possimus molestias voluptates, nostrum tempore. Deserunt
+                    soluta, ipsa odit voluptate suscipit quam?</li>
+            </ul>
+        </li>
+        <li>where do we use it? <ul style="display: none;">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum expedita ad perferendis, est
+                    voluptatum ab labore blanditiis! Recusandae praesentium saepe beatae quidem quaerat voluptas
+                    laudantium, illo provident, numquam, unde maxime.</li>
+            </ul>
+        </li>
+        <li>where can i get some? <ul style="display: none;">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, modi tempore reprehenderit odio
+                    exercitationem maxime, at laudantium possimus quidem esse dolorum? Earum ratione nemo autem odit
+                    consectetur eos maxime neque.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        function Click(event) {
+            //debugger;
+            let elementsUL = mainTagUL.getElementsByTagName("ul");
+
+            for (let i = 0; i < elementsUL.length; i++) {
+                if (elementsUL[i].style.display != "none") {
+                    elementsUL[i].style.display = "none";
+                }
+            }
+
+            let childsUl = this.children;
+            for (let i = 0; i < childsUl.length; i++) {
+                if (childsUl[i].style.display == "none") {
+                    childsUl[i].style.display = "inline-block";
+                }
+                else {
+                    childsUl[i].style.display = "none";
+                }
+            }
+        }
+        //debugger;
+        let children = mainTagUL.children;
+
+        for (let i = 0; i < children.length; i++) {
+            children[i].addEventListener("click", Click);
+        }
+
+    </script>
+</body>
+
+</html>

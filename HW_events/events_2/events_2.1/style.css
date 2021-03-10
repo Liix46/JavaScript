@@ -1,0 +1,9 @@
+#mainDiv{
+    background: wheat;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+#login{
+    width :95%;
+}

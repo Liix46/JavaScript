@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="mainDiv">
+        <label> Enter your name (name can't contain digits): </label>
+        <form>
+            <input id="login"></input>
+        </form>
+    </div>
+</body>
+
+<script>
+
+    function Change(event){
+        let text = event.target.value;
+        alert(text);
+    }
+
+    function KeyUp(event){
+        //debugger;
+        let checkstr = event.target.value;
+        const regex = new RegExp(/\d+/);
+        event.target.value = checkstr.replace(regex,'');
+    }
+
+    let textBoxLogin = document.getElementById("login");
+ 
+    textBoxLogin.addEventListener("keyup", KeyUp);
+</script>
+</html>

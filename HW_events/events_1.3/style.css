@@ -1,0 +1,13 @@
+#textBox{
+    min-height : 100px;
+    min-width : 300px;
+}
+
+#sliderButton{
+    position : absolute;
+    height : 15px;
+    width : 5px;
+    left: 0px;
+    top: 0px;
+    background: rgb(68, 68, 68);
+}
