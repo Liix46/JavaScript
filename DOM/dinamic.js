@@ -1,42 +1,91 @@
 function ClickItemList(event) {
-    debugger;
-    if (changeTextRadio.checked == true) {
-        let CurrentElem = event.target;
-        CurrentElem.textContent = textBox3.value;
+    //debugger;
+    if (addInEndRadio.checked) {
+        //debugger;
+        let newElem = document.createElement("li");
+        newElem.addEventListener("click", ClickItemList);
+        let textElem = document.createTextNode(textBox1.value);
+        newElem.appendChild(textElem);
+        let parentElem = event.target.parentElement;
+        parentElem.appendChild(newElem);
     }
-    else if (addInEndRadio.checked == true) {
-        let elemLi = document.createElement("li");
-        elemLi.addEventListener("click", ClickItemList);
-        let elemText = document.createTextNode(textBox1.value);
-        elemLi.appendChild(elemText);
-        event.target.appendChild(elemLi);
+    else if (addBeforeRadio.checked) {
+        let currentElem = event.target;
+        let parentElem = event.target.parentElement;
+        let newElem = document.createElement("li");
+        let textElem = document.createTextNode(textBox2.value);
+
+        //adding new elements to the list
+        newElem.appendChild(textElem);
+        parentElem.insertBefore(newElem, currentElem);
+
+        //add events
+        newElem.addEventListener("click", ClickItemList);
+    }
+    else if (changeTextRadio.checked) {
+        let elements = event.target.childNodes;
+        for (let i = 0; i < elements.length; i++) {
+            if (elements[i].nodeName == '#text') {
+                elements[i].nodeValue = textBox3.value;
+                break;
+            }
+        }
+    }
+    else if (addNestedListRadio.checked) {
+        let currentElem = event.target;
+
+        // checking for a nested list
+        if (currentElem.children.length == 0) {
+
+            let newElemUl = document.createElement("ul");
+            let newElemLi = document.createElement("li");
+            let elemTopic = document.createTextNode(textBox4.value);
+
+            //struct list
+            newElemLi.appendChild(elemTopic);
+            newElemUl.appendChild(newElemLi);
+            currentElem.appendChild(newElemUl);
+
+            //add events
+            newElemLi.addEventListener("click", ClickItemList);
+        }
+    }
+    else if (deleteListItemRadio.checked) {
+        let currentElem = event.target;
+        let parentElem = currentElem.parentElement;
+
+        //delete current Element
+        parentElem.removeChild(currentElem);
+        debugger;
+        if (mainUl.children.length == 0) {
+            let parentMainUl = mainUl.parentElement;
+            parentMainUl.removeChild(mainUl);
+            newListButton.disabled = false;
+        }
     }
     event.stopPropagation();
 }
 
 function ClickButton(event) {
     //debugger;
-
-    // elemMainUl.addEventListener("click", ClickItemList);
-    //elemMainUl.appendChild(elemTopic);
-    let elemParentUl = document.createElement("ul");  
+    let elemParentUl = document.createElement("ul");
     let elemParentLi = document.createElement("li");
-    let elemChildUl = document.createElement("ul");
-    let elemChildLi = document.createElement("li");
     let elemTopic = document.createTextNode("Topic");
-    let elemItemText = document.createTextNode("New Item");
 
     // struct list
     elemParentUl.appendChild(elemParentLi);
     elemParentLi.appendChild(elemTopic);
-    elemParentLi.appendChild(elemChildUl);
-    elemChildUl.appendChild(elemChildLi);
-    elemChildLi.appendChild(elemItemText);
 
     document.body.append(elemParentUl);
 
-    //events: click - all <li>    
+    //events: click     
     elemParentLi.addEventListener("click", ClickItemList);
+
+    //disable button
+    event.target.disabled = true;
+
+    // set Id main Ul
+    elemParentUl.id = "mainUl";
 }
 function ChangeRadio(event) {
     let textBox = document.querySelectorAll('input[type="text"]');
