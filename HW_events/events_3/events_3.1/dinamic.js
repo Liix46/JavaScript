@@ -7,9 +7,8 @@ function Input(event){
 
 function KeyDown(event) {
 
-   // event.preventDefault();
-
     if (event.ctrlKey && event.code == 'KeyE') {
+        event.preventDefault();
         let item = body.innerHTML;
         item = item.replace(/div/g, "textarea");
         body.innerHTML = item;
@@ -22,7 +21,7 @@ function KeyDown(event) {
         }
     }
     else if (event.ctrlKey && event.code == 'KeyS') {
-       
+        event.preventDefault();
         let item = body.innerHTML;
         item = item.replace(/textarea/g, "div");
         body.innerHTML = item;
