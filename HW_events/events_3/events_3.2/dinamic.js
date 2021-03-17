@@ -18,19 +18,19 @@ function Click(event) {
     for (let i = 1; i < elements.length; i++) {
         elemColumbs.push(elements[i].children[columbIndex]);
     }
-//debugger;
+
+
     for (let i = 1; i < elements.length; i++) {
         let newPerson = new Person();
         newPerson.Firstname = elements[i].children[0].innerText;
         newPerson.Lastname = elements[i].children[1].innerText;
         newPerson.Age = parseInt(elements[i].children[2].innerText);
         newPerson.Company = elements[i].children[3].innerText;
-        persons.set(newPerson[currentTitle.innerText], newPerson);
+        persons.set(`${newPerson[currentTitle.innerText]}`, newPerson);
     }
-
     if (currentTitle.innerText == 'Age') {
         elemColumbs.sort(function (a, b) {
-            return a - b;
+            return parseInt(a.innerText) - parseInt(b.innerText);
         });
     }
     else {
@@ -47,20 +47,21 @@ function Click(event) {
     }
 
     let keys = new Array();
-    for(let i = 0; i < elemColumbs.length; i++){
+    for (let i = 0; i < elemColumbs.length; i++) {
         keys.push(elemColumbs[i].firstChild.data);
     }
 
     for (let i = 0; i < elemColumbs.length; i++) {
         console.log(elemColumbs[i].innerText);
     }
-    debugger;
-
-    for (let i = 1; i < elements[i].children.length; i++) {
-        elements[i].children[0].innerText = persons.get(keys[i-1]).Firstname;
-        elements[i].children[1].innerText = persons.get(keys[i-1]).Lastname;
-        elements[i].children[2].innerText = persons.get(keys[i-1]).Age;
-        elements[i].children[3].innerText = persons.get(keys[i-1]).Company;
+    //debugger;
+    let length = elements[0].children.length + 1;
+    for (let i = 1; i < length; i++) {
+        let children = elements[i].children;
+        children[0].firstChild.data = persons.get(keys[i - 1]).Firstname;
+        children[1].firstChild.data = persons.get(keys[i - 1]).Lastname;
+        children[2].firstChild.data = persons.get(keys[i - 1]).Age;
+        children[3].firstChild.data = persons.get(keys[i - 1]).Company;
     }
 }
 
