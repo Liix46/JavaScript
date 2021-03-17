@@ -18,6 +18,8 @@ img{
     background-repeat: no-repeat;
     background-position: 80% 50%;
     margin: 15px;
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
 }
 #mainImg{
     height: 55%;
@@ -29,11 +31,20 @@ img{
 }
 
 #gallery{
-    display: block;
-    margin-left: 10%;
+    margin-left: 10vw;
 }
 
 #controls{
     display: block;
     margin-left: 40%;
+}
+
+img:hover{
+    transition: 1s;
+    height: 25%;
+    width: 25%;
+}
+
+body{
+    background-color: rgb(195, 195, 236);
 }

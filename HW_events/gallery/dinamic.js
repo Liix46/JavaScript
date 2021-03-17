@@ -21,9 +21,32 @@ function ClickRBtn(event) {
     for (let i = 0; i < images.length; i++) {
         images[i].src = newPuthImages[i];
     }
+}
 
+function ClickLBtn(event) {
+   
+     //debugger;
+    let images = document.getElementsByTagName('img');
 
+    let puthImages = new Array();
+
+    for (const image of images) {
+        puthImages.push(image.src);
+    }
+    let newPuthImages = new Array();
+
+    newPuthImages.push(puthImages[1]);
+    newPuthImages.push(puthImages[2]);
+    newPuthImages.push(puthImages[3]);
+    newPuthImages.push(puthImages[4]);
+    newPuthImages.push(puthImages[0]);
+
+    //debugger;
+
+    for (let i = 0; i < images.length; i++) {
+        images[i].src = newPuthImages[i];
+    }
 }
 
 rightBtn.addEventListener('click', ClickRBtn);
-leftBtn.AddEventListener('click', ClickLBtn)
+leftBtn.addEventListener('click', ClickLBtn);
