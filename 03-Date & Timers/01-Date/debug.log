@@ -1,1 +1,0 @@
-[0317/144107.835:ERROR:filesystem_win.cc(148)] DeleteFile c:\Users\bojc_tq19\AppData\Roaming\Code\User\workspaceStorage\f62f37da2106b3c41697aec9a8e6436c\ms-vscode.js-debug\.profile\Crashpad\reports\2f7a9cab-b720-442d-be3e-90fe644950cd.dmp: Процесс не может получить доступ к файлу, так как этот файл занят другим процессом. (0x20)
