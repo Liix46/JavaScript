@@ -2,12 +2,11 @@
 
 table{
     border-collapse: collapse;
-    /* background-image: url(../01-Date/Calendar/1.JPG); */
 }
 td{
     height: 100px;
     width: 100px;
-    border: 5px solid black;
+    border: 2px solid white;
     font-size: 30px;
     text-align: center;
 }
@@ -19,5 +18,10 @@ body{
 
 thead > tr > td{
     font-size: 40px;
-    font-weight: bolder;
+    font-weight:900;
+    background: yellow;
+}
+
+header{
+    height: 100px;
 }
