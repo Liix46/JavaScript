@@ -10,7 +10,8 @@ td{
     height: 100px;
     width: 100px;
     border: 2px solid white;
-    font-size: 30px;
+    font-size: 40px;
+    color: black;
 }
 body{
     display: block;

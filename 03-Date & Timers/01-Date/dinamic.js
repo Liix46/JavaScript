@@ -1,7 +1,6 @@
 ///////////////
 //debugger;
  let Currentdate = new Date(Date.now());
-//let Currentdate = new Date("2021", "3", "5");
 if(Currentdate.getMonth()+1==1||Currentdate.getMonth()+1 ==2 ||Currentdate.getMonth()+1 ==12){
     tbody.style.backgroundImage = "url('../01-Date/Calendar/1.JPG')";
 }
@@ -16,10 +15,11 @@ else{
 }
 tbody.style.backgroundRepeat = "no-repeat";
 tbody.style.backgroundSize = "cover";
-
+//////////////////////////////////////
+//debugger;
 let month = Currentdate.getMonth();
 Currentdate.setDate(1);
-let UTCDay = Currentdate.getUTCDay();
+let UTCDay = Currentdate.getUTCDay()-1;
 
 let days = 0;
 
@@ -31,7 +31,7 @@ while (month == Currentdate.getMonth()) {
 let Days = document.getElementsByTagName('td');
 let date = new Date(Date.now());
 let currentDate = date.getDate();
-debugger;
+//debugger;
 let lenght = 35;
 for (let i = 0; i < lenght; i++) {
     let index = i + UTCDay + 7;
@@ -39,6 +39,7 @@ for (let i = 0; i < lenght; i++) {
         break;   
         
     if(i< days){
+        Days[index].style.fontWeight = "900";
         Days[index].textContent = `${i+1}`;
         //debugger;
         if (i+1 == currentDate) {
@@ -68,10 +69,12 @@ for(let i = 0; i< UTCDay; i++){
     Days[index].textContent = `${days - UTCDay + i+1}`;
 }
 
-for (let i=5; i< Days.length; i+=7) {   
+for (let i=12; i< Days.length; i+=7) {   
     Days[i].style.color = "red";   
     Days[i+1].style.color = "red";
 }
+Days[5].style.background = "red";   
+Days[6].style.background = "red";
 //////////////////
 
 let nameMonth = new Array(
@@ -89,4 +92,4 @@ let nameMonth = new Array(
 'December'
 );
 
-header.innerText = `${nameMonth[month]}`;
+header.innerText = `${nameMonth[month+1]}`;
