@@ -1,10 +1,7 @@
 ///////////////
 //debugger;
-
-
-
-// let Currentdate = new Date(Date.now());
-let Currentdate = new Date("2021", "3", "5");
+ let Currentdate = new Date(Date.now());
+//let Currentdate = new Date("2021", "3", "5");
 if(Currentdate.getMonth()+1==1||Currentdate.getMonth()+1 ==2 ||Currentdate.getMonth()+1 ==12){
     tbody.style.backgroundImage = "url('../01-Date/Calendar/1.JPG')";
 }
@@ -23,18 +20,18 @@ tbody.style.backgroundSize = "cover";
 let month = Currentdate.getMonth();
 Currentdate.setDate(1);
 let UTCDay = Currentdate.getUTCDay();
+
 let days = 0;
 
 while (month == Currentdate.getMonth()) {
     Currentdate.setDate(Currentdate.getDate() + 1);
     days++;
 }
-console.log(days);
-console.log(UTCDay);
 
 let Days = document.getElementsByTagName('td');
-
-//debugger;
+let date = new Date(Date.now());
+let currentDate = date.getDate();
+debugger;
 let lenght = 35;
 for (let i = 0; i < lenght; i++) {
     let index = i + UTCDay + 7;
@@ -43,8 +40,13 @@ for (let i = 0; i < lenght; i++) {
         
     if(i< days){
         Days[index].textContent = `${i+1}`;
+        //debugger;
+        if (i+1 == currentDate) {
+            Days[index].style.backgroundColor = "yellow";
+        }
     }
     else{
+        Days[index].style.color = "grey";
         Days[index].textContent = `${i+1-days}`;
     }
 }
@@ -62,13 +64,29 @@ while (month == newDate.getMonth()) {
 
 for(let i = 0; i< UTCDay; i++){
     let index = i + 7;
+    Days[index].style.color = "grey";
     Days[index].textContent = `${days - UTCDay + i+1}`;
 }
 
-//debugger;
-
-function Click(event){
-    let cell = event.target;
+for (let i=5; i< Days.length; i+=7) {   
+    Days[i].style.color = "red";   
+    Days[i+1].style.color = "red";
 }
+//////////////////
 
-tbody.addEventListener('click',Click);
+let nameMonth = new Array(
+'January', 
+'February', 
+'March',
+'April', 
+'May', 
+'June', 
+'July', 
+'August', 
+'September', 
+'October', 
+'November', 
+'December'
+);
+
+header.innerText = `${nameMonth[month]}`;
