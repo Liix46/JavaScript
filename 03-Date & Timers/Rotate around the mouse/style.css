@@ -1,0 +1,53 @@
+body{
+    width : 100vw;
+    height : 100vh;
+    background: rgb(12, 12, 26);
+}
+
+body{
+    cursor: url(./src/sun.png) 53 53, crosshair;
+}
+
+#Mercury, #Venus, #Earth, #Mars, #Jupiter, #Saturn, #Uranus{
+    border: solid 1px black;
+    border-radius: 50px;
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    
+}
+#Mercury{
+    width: 5px;
+    height: 5px;
+    background: rgb(134, 134, 134);   
+}
+#Venus{
+    width: 10px;
+    height: 10px;
+    background: rgb(243, 247, 53);  
+}
+#Earth{    
+    width: 15px;
+    height: 15px;
+    background: rgb(21, 223, 238);   
+}
+#Mars{
+    width: 8px;
+    height: 8px;
+    background: rgb(235, 44, 30); 
+}
+#Jupiter{
+    width: 30px;
+    height: 30px;
+    background: rgb(145, 130, 0);   
+}
+#Saturn{
+    width: 25px;
+    height: 25px;
+    background: rgb(179, 103, 4);   
+}
+#Uranus{
+    width: 20px;
+    height: 20px;
+    background: rgb(6, 105, 218);    
+}
