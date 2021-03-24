@@ -1,7 +1,6 @@
 div{
     height: 100px;
     width: 50px;
-    border: solid 1px black;
     display: inline-flex;
 }
 
