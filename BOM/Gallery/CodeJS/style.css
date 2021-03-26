@@ -1,0 +1,21 @@
+body{
+    background-image: url(../IMG/BG1.JPG);
+}
+header{
+    background-image: url(../IMG/TITLE.JPG);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+    height: 15vw;
+    width: 100vw;
+}
+h1{
+   text-align: center;
+    color: white;
+}
+
+div{
+    display: inline-block;
+    text-align: center;
+    width: 100vw;
+}
