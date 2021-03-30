@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" ></link>
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <select NAME="Item" SIZE=5>
-            <option SELECTED>Odessa-Lviv
-            <option>Odessa-Kiev           
-        </select>
-    </form>
+    <tr>
+        <td><label for="lang">Direction:</label></td>
+        <td>
+            <select id="lang" name="lang">
+                <option value="o-l" selected>Odessa-Lviv</option>
+                <option value="o-k">Odessa-Kiev</option>
+                <option value="o-d">Odessa-Dnipro</option>
+            </select>
+        </td>
+        <td><label for="lang">Date:</label></td>
+        <td>
+            <input type="date">
+        </td>
+        <td>
+            <input type="submit" value="search">
+        </td>
+    </tr>
+    <script src="dinamic.js"></script>
 </body>
 </html>
