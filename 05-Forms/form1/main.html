@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" ></link>
+    <link rel="stylesheet" href="style.css">
+    </link>
     <title>Document</title>
 </head>
+
 <body>
     <tr>
-        <td><label for="lang">Direction:</label></td>
+        <td><label for="city">Direction:</label></td>
         <td>
-            <select id="lang" name="lang">
+            <select id="city" name="city">
                 <option value="o-l" selected>Odessa-Lviv</option>
                 <option value="o-k">Odessa-Kiev</option>
                 <option value="o-d">Odessa-Dnipro</option>
             </select>
         </td>
-        <td><label for="lang">Date:</label></td>
+        <td><label for="date">Date:</label></td>
         <td>
-            <input type="date">
+            <input type="date" name="date" id="date">            
         </td>
         <td>
-            <input type="submit" value="search">
+            <input type="submit" value="search" id="submit">
         </td>
     </tr>
+    <hr></hr>
+    <script src="loadPage.js"></script>
+    <script type="module" src="order.js"></script>
     <script src="dinamic.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,39 @@
-td{
+/*----------------*/
+
+label{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#submit{
+    margin-left: 10px;
+    width: 70px;
+}
+body{
+    background: rgba(228, 187, 175, 0.425);
+}
+
+#tablePlace > tbody > tr >td{
+    width: 50px;
+    height: 15px;
+    border: solid 1px black;
+}
+
+#tablePlace{
+    border: solid 1px black;
     padding: 5px;
+    padding-bottom: 15px;
+}
+hr{
+    color: black;
+    background-color: black;
+    border: none;
+    height: 1px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+div{
+    text-align: end;
+}
+#book{
+    width: 70px;
 }
