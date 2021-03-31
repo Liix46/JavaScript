@@ -1,16 +1,12 @@
 //////////////////
 //import class
-import { Order } from './order';
+ import Order from './order.js';
 //////////////////
 //functions
 
-function submitClick() {
-    //let currentTrain = mapTrains.get(keyCurrentTrain);
-
-    //debugger;
-}
 
 function ClickBook(){
+    debugger;
     //получаем ключ выбраного поезда
     let nameTrain = city.value;
     let dateTicket = date.value;
@@ -22,7 +18,7 @@ function ClickBook(){
             orders.push(order);
        }
     }
-     debugger;
+     
 }
 // 
 let orders = new Array();
@@ -45,5 +41,5 @@ for (let i = 0; i < optionElements.length; i++) {
     mapTrains.set(optionElements[i].value, train);
 }
 
-submit.addEventListener('click', submitClick);
-//debugger;
+//submit.addEventListener('click', submitClick);
+debugger;

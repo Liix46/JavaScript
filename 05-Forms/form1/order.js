@@ -1,18 +1,18 @@
-export default class Order{
-    constructor(date, place, trainName){
+class Order {
+    constructor(date, place, trainName) {
         this._date = date;
         this._place = place;
         this._trainName = trainName;
     }
-    get date(){
+    get date() {
         return this.date;
     }
-    get place(){
+    get place() {
         return this._place;
     }
-    get trainName(){
+    get trainName() {
         return this._trainName;
     }
 }
 
-module.exports = {Order}
+export {Order};
