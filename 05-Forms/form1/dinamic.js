@@ -1,45 +1,81 @@
 //////////////////
-//import class
- import Order from './order.js';
 //////////////////
 //functions
-
-
+window.addEventListener('load', LoadWindow);
+let orders = new Array();
+let checkboxes;
+let price = 62;
+function TotalAmount(countTickets, price){
+    //debugger;
+    let priceOrder = countTickets * price;
+    labelPrice.innerText = `Total price: ${priceOrder}`;
+}
+function showTickets(){
+    //debugger;
+    for (const order of orders) {
+        tickets.appendChild(tr = document.createElement("tr"));
+        tr.appendChild(td = document.createElement("td"));
+        td.innerHTML = `${order.trainName}`;
+        tr.appendChild(td = document.createElement("td"));
+        td.innerHTML = `${order.date}`;
+        tr.appendChild(td = document.createElement("td"));
+        td.innerHTML = `${order.place}`;
+    }
+   
+}
 function ClickBook(){
-    debugger;
-    //получаем ключ выбраного поезда
+    
+    //сбор данных
     let nameTrain = city.value;
     let dateTicket = date.value;
-    let checkboxes = document.getElementsByClassName("checkBox");
-    
+
     for (let i = 0; i < checkboxes.length; i++) {
-       if(checkboxes[i].checked){
+       if(checkboxes[i].checked && !(checkboxes[i].disabled)){
             let order = new Order(dateTicket,i,nameTrain);
             orders.push(order);
        }
     }
-     
+    ClickSearch();
+    TotalAmount(0,price);
+    showTickets();
+   // debugger;
 }
-// 
-let orders = new Array();
-//////////////////
-//ставим обработчик на событие click кнопки Book
-book.addEventListener('click', ClickBook)
-//получаем элементы option
-let optionElements = document.getElementsByTagName('option');
 
-//создаем Map. key: value (options) поезда, value: массив мест поезда
-let mapTrains = new Map();
-for (let i = 0; i < optionElements.length; i++) {
-    let train = new Array();
+function ClickSearch(){
+    let nameTrain = city.value;
+    let dateTicket = date.value;
 
-    //указываем количество мест в вагоне текущего поезда
-    for (let j = 0; j < countSit; j++) {
-        train.push(true);
+    for (const checkBox of checkboxes) {
+        checkBox.disabled = false;
+        checkBox.checked = false;
     }
-    // добавляем поезд в mapTrains (дерево поездов)
-    mapTrains.set(optionElements[i].value, train);
+    for(let i =0; i< orders.length; i++){
+        let order = orders[i];
+        if(order.trainName == nameTrain && order.date == dateTicket){
+            checkboxes[order.place].checked = true;
+            checkboxes[order.place].disabled = true;
+        }
+    }
+}
+function ChangeCheckbox(){
+    let nameTrain = city.value;
+    let dateTicket = date.value;
+    let countTickets = 0;
+    for (const checkBox of checkboxes) {
+       if (checkBox.checked && !(checkBox.disabled)) {
+        countTickets++;
+       }        
+    }
+    TotalAmount(countTickets, price);
 }
 
-//submit.addEventListener('click', submitClick);
-debugger;
+function LoadWindow(){
+    
+    //////////////////
+    book.addEventListener('click', ClickBook)
+    submit.addEventListener('click', ClickSearch)
+    checkboxes = document.getElementsByClassName("checkBox");
+    for (const checkbox of checkboxes) {
+        checkbox.addEventListener('change', ChangeCheckbox);
+    }
+}

@@ -5,7 +5,7 @@ class Order {
         this._trainName = trainName;
     }
     get date() {
-        return this.date;
+        return this._date;
     }
     get place() {
         return this._place;
@@ -14,5 +14,3 @@ class Order {
         return this._trainName;
     }
 }
-
-export {Order};

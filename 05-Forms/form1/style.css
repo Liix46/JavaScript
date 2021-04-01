@@ -18,6 +18,11 @@ body{
     border: solid 1px black;
 }
 
+table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
 #tablePlace{
     border: solid 1px black;
     padding: 5px;
@@ -36,4 +41,13 @@ div{
 }
 #book{
     width: 70px;
+}
+
+#tickets>tbody>tr>th, #tickets>tbody>tr>td{
+    border: solid 1px black;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 100;
+    font-size: 25px;
 }
