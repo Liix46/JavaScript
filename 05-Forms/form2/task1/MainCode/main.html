@@ -12,41 +12,45 @@
 <body>
     <h3>Регистрация:</h3>
     <div>
+        <label>Логин:</label>
         <form>
-            <label>Логин:</label>
-            <input type="text">
+            <input type="text"  id="login">
         </form>
+
+        <label>Пароль:</label>
         <form>
-            <label>Пароль:</label>
-            <input type="password">
+            <input type="password" id="password1">
         </form>
+
+        <label>Подтверждение:</label>
         <form>
-            <label>Подтверждение:</label>
-            <input type="password">
+            <input type="password" id="password2">
         </form>
+
+        <label >Полное имя:</label>
         <form>
-            <label>Полное имя:</label>
-            <input type="text">
+            <input type="text" id="formFullName">
         </form>
+
+        <label>Пол:</label>
         <form>
-            <label>Пол:</label>
-            <input type="radio" name="Rd">
-            <input type="radio" name="Rd">
+            <input type="radio" name="Rd" checked id="rdMan">М</input>
+            <input type="radio" name="Rd">Ж</input>
         </form>
-        <form>
-            <label>Специализация:</label>
-            <input type="checkbox">Дизайн</input>
+
+        <label>Специализация:</label>
+        <form id="formCheckboxes">
+            <input type="checkbox" checked>Дизайн</input>
             <br>
             <input type="checkbox">Программирование</input>
             <br>
             <input type="checkbox">Администрирование</input>
-
-
         </form>
+        <br>
+        <label>Должность</label>
         <form>
-            <label>Должность</label>
-            <select id="city" name="city">
-                <option value="0" selected>******Выберите******</option>
+            <select id="position" name="position" >
+                <option value="0" selected>..........Выберите..........</option>
                 <option value="1">Директор</option>
                 <option value="2">Заместитель директора</option>
                 <option value="3">Руководитель отдела</option>
@@ -57,12 +61,12 @@
                 <option value="8">Служащий</option>
             </select>
         </form>
-        <form>
-            <input type="submit">
-            <input type="reset">
+        <hr>
+        <form id="control">
+            <input type="submit" value="Регистрация" id="registration">
+            <input type="reset" value="Сброс">
         </form>
     </div>
-
     <script src="dinamic.js"></script>
 </body>
 

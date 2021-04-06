@@ -1,0 +1,30 @@
+div{
+    font-size: 18px;
+}
+label{
+    display: block;
+    width: 180px;
+    float: left;
+    text-align: end;
+    margin-right: 20px;
+}
+
+#formCheckboxes{
+    display: inline-block;
+}
+form{
+    padding-bottom: 10px;
+    padding-top: 0px;
+}
+h3{
+    margin-left: 160px;
+}
+#control{
+    margin-left: 160px;
+}
+#control>input{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 38px;
+    margin-right: -32px;
+}

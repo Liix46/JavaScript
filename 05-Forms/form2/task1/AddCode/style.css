@@ -1,0 +1,10 @@
+table{
+    border-collapse: separate; /* Способ отображения границы */ 
+}
+
+td{
+    border: solid 1px black;
+    min-width: 200px;
+    padding: 5px;
+    font-size: 20px;
+}

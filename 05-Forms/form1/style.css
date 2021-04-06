@@ -43,7 +43,7 @@ div{
     width: 70px;
 }
 
-#tickets>tbody>tr>th, #tickets>tbody>tr>td{
+#tickets>tr>th, #tickets>tr>td{
     border: solid 1px black;
     padding: 5px;
     padding-left: 20px;
