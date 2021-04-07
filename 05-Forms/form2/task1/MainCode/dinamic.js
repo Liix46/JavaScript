@@ -1,9 +1,13 @@
 ////////
 window.addEventListener('load', Main);
-
+let addWin;
+let properties;
+let sex = ['Мужской', 'Женский'];
+let specialization = ['Дизайн','Программирование','Администрирование'];
 function Main() {
     registration.addEventListener('click', Click);
 }
+
 
 function Click() {
     //debugger;
@@ -29,20 +33,17 @@ function Click() {
     //     return;
     // }
    
-    
-    let addWin = window.open('../AddCode/form.html', "table Form");
-
-    let properties = new Array();
+    properties = new Array();
     properties.push(login.value);
     properties.push(formFullName.value);
     if(rdMan.checked){
-        properties.push('Мужской');
+        properties.push(sex['Мужской']);
     }
     else{
-        properties.push('Женский');
+        properties.push(sex['Женский']);
     }
     
-    let specialization = ['Дизайн','Программирование','Администрирование'];
+    
     let index =0;
     for (const check of formCheckboxes) {
        
@@ -50,15 +51,22 @@ function Click() {
             properties.push(specialization[index]);
         } 
         index++;
-    }
+    }   
     
-    
-    properties.push(position[position.selectedIndex].innerText);
-    debugger;
-    index =0;
-    let trElem = addWin.document.getElementsByTagName('tr');
-    for (const tr of trElem) {
-        tr.lastChild.textContent
-        index++;
-    }
+    properties.push(position[position.selectedIndex].innerText);   
+      
+    addWin = window.open('../AddCode/form.html', "table Form");
+     // не отрабатывает событие Load
+    addWin.addEventListener('load', LoadAddWindow);
+   debugger;
 }
+
+function LoadAddWindow() {
+     // index =0;
+     debugger;
+     //let trElem = addWin.tableForm.children;
+    // for (const tr of trElem) {
+    //     tr.lastChild.textContent
+    //     index++;
+    // }
+} 

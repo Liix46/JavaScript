@@ -1,5 +1,6 @@
 table{
     border-collapse: separate; /* Способ отображения границы */ 
+    border-spacing: 0px; /* Ширина таблицы */ 
 }
 
 td{
