@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <span></span>
-        <a href="../Registration/main.html">exit</a>
+        <b id="b_Welcome"></b>
+        <a href="../Registration/main.html" onclick="return false;" id="exitLink">exit</a>
     </header>
     <div>
         <h3>User info</h3>
@@ -18,21 +18,25 @@
         <table>
             <tr>
                 <td>
-                    <label>First Name:</label>
-                    <input type="text">
+                    <label>First Name:</label> 
+                    <span id="firstnameCheck"></span>
+                    <input type="text" maxlength="20" id="firstNameText">
                 </td>
                 <td>
                     <label>Last Name:</label>
-                    <input type="text">
+                    <span id="lastnameCheck"></span>
+                    <input type="text" maxlength="20" id="lastNameText">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>Year of birth:</label>
-                    <input type="number">
+                    <span id="b_dayCheck"></span>
+                    <input type="number" id="b_dayNumber">
                 </td>
                 <td>
                     <label>Gender:</label>
+                    <span></span>
                     <select>
                         <option>male</option>
                         <option>female</option>
@@ -42,17 +46,18 @@
             <tr>
                 <td>
                     <label>Phone number:</label>
-                    <input type="text">
+                    <span id="numberCheck"></span>
+                    <input type="text" id="numberText">
                 </td>
                 <td>
                     <label>Skype:</label>
-                    <input type="text">
+                    <span id="skypeCheck"></span>
+                    <input type="text" id="skypeText">
                 </td>
             </tr>
         </table>
         <input type="submit" value="Save" id="submitButton">
-    </div>
-   
+    </div>  
 
     <script src="dinamic.js"></script>
 </body>

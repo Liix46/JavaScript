@@ -7,7 +7,7 @@ header{
 }
 label{
     display: inline-block;
-    width:100%;
+    width: 139px;
 }
 div{
     display: inline-block;
@@ -25,4 +25,12 @@ td{
 }
 #submitButton{
     width: 100%;
+}
+
+span{
+    display: inline-block;
+    /* border: solid 1px black; */
+     width: 20px;
+     height: 20px;
+     vertical-align: bottom;
 }

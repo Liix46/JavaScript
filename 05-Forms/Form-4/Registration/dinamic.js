@@ -53,7 +53,7 @@ function clickSubmit(){
     }
 
     saveCookie(email.value);
-    openUserWindow();
+    openUserWindow(email.value);
    // window.close();
    // window.opener.close()
 }
@@ -61,6 +61,6 @@ function clickSubmit(){
 function saveCookie(email){
     localStorage.setItem("email", email);
 }
-function openUserWindow(){
-    window.open('../UserInfo/main.html', 'User Info',"width=600,height=500");
+function openUserWindow(email){
+    window.open(`../UserInfo/main.html?${email}`, 'User Info',"width=600,height=500");
 }
