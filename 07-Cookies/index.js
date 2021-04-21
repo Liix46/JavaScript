@@ -3,6 +3,8 @@ let tasks = new Array();
 let indexQuestion =1;
 let userRightAnsver =0;
 let RadioBtns = document.getElementsByName('RDBTN');
+let attemp = localStorage.getItem("attemp");
+
 function main(){
    
     let task = new Task();
@@ -30,16 +32,29 @@ function main(){
 
 function testing() {
     //debugger;
+    let attemp = localStorage.getItem("attemp");
+    //localStorage.setItem("attemp", 5);
+    if (attemp == null) {
+        attemp = 5;
+        localStorage.setItem("attemp", attemp);
+    }
+    if (attemp == '0') {
+        alert("Количество попыток закончились");
+        return;
+    }
+
     question.innerText = tasks[0].question;
     ansver1.innerText = tasks[0]._ansvers[0];
     ansver2.innerText = tasks[0]._ansvers[1];
     ansver3.innerText = tasks[0]._ansvers[2];
+
+    nextQuestion.disabled = false;
 }
 
 function next(){
-    //debugger;
+    
     let index = tasks[indexQuestion-1]._indexRightAnsver;
-        if(RadioBtns[index].checked ==true){
+        if(RadioBtns[index].checked == true){
             userRightAnsver++;
         }
 
@@ -47,6 +62,11 @@ function next(){
         //alert(userRightAnsver);
         let name = prompt('Страна требует знать имя своего героя?', 'Имя');
         alert(`Поздравляем, ${name}! Тест сдан на ${userRightAnsver} из ${tasks.length}`);
+        localStorage.setItem("name", `${name}`);
+        localStorage.setItem("result", `${userRightAnsver}`);
+        attemp--;
+        localStorage.setItem("attemp", attemp);
+        nextQuestion.disabled = true;
     }
     else{
         question.innerText = tasks[indexQuestion].question;
