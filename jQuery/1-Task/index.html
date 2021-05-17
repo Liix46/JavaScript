@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-    <label>String should be <input type="text" id=""> characters long</label>
+    <label>String should be <input type="text" id="lengthTextBox"> characters long</label>
     <br>
     <label>Which characters are allowed to occur in the string?</label>
     <br>
-    <label><input type="checkbox"> Numeric digits (0-9)</label>
+    <label><input type="checkbox" value="0-9"> Numeric digits (0-9)</label>
     <br>
-    <label><input type="checkbox"> Uppercase letters (A-Z)</label>
+    <label><input type="checkbox" value="A-Z"> Uppercase letters (A-Z)</label>
     <br>
-    <label><input type="checkbox"> Lowercase letters (a-z)</label>
+    <label><input type="checkbox" value="a-z"> Lowercase letters (a-z)</label>
     <br>
     <input type="submit" value="Generate">
     <hr>
-    <b>Result: <input type="text"></b>
+    <b>Result: <input type="text" id="resultText"></b>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
