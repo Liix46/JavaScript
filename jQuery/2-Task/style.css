@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+div{
+    display: flex;
+   /* border: solid black 2px;*/
+}
+
+#firstMainDiv{
+flex-grow: 20;
+flex-direction: row;
+}
+
+#lastMainDiv{
+    flex-grow: 50;
+    flex-direction: column;
+}
+
+#mainDiv{
+    flex-direction: row;
+    /*border-width: 0px;*/
+    height: 100%;
+}
+
+/**/
+
+#mainChildDiv{
+    flex-grow: 39;
+    flex-direction: column;
+}
+#burgerDiv{
+    flex-grow: 1;
+    background: #cccccc;
+    background-image: url(src/icon_less.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/**/
+
+#blueDiv{
+    flex-grow: 79;
+    background: aqua;
+}
+.scrollDiv{
+    flex-grow: 3;
+    background: #cccccc;
+    background-image: url(./src/icon_equally.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#pinkDiv{
+    flex-grow: 79;
+    background: pink;
+}
+
+/**/
+
+#greenDiv{
+    flex-grow: 79;
+    background: green;
+}
+
+#orangeDiv{
+    flex-grow: 79;
+    background: orangered;
+}
